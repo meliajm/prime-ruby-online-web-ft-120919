@@ -1,3 +1,6 @@
+require 'benchmark'
+require 'bigdecimal/math'
+
 def prime?(integer)
   if integer <= 0 || integer == 1 || integer == 4
     return false
@@ -8,4 +11,4 @@ def prime?(integer)
   result_array[0].include?(true) ? false : true
 end 
   
-  
+puts Benchmark.measure { prime?(300) }
